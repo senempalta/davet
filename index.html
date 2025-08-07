@@ -86,20 +86,9 @@
             width: 100%;
         }
 
-        /* MOBİL MENÜ */
+        /* MOBİL MENÜ - KULLANILMIYOR */
         .hamburger {
             display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
         }
 
         /* SAYFA İÇERİKLERİ */
@@ -191,7 +180,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* DETAY SAYFASI */
+        /* DETAY BÖLÜMÜ (ANA SAYFADA) */
         .details-section {
             padding: 80px 0;
             background: white;
@@ -454,38 +443,7 @@
         /* RESPONSİVE TASARIM */
         @media (max-width: 768px) {
             .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: white;
-                flex-direction: column;
-                justify-content: start;
-                align-items: center;
-                padding-top: 50px;
-                transition: all 0.3s ease;
-                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .hamburger.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .hamburger.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
+                gap: 20px;
             }
 
             .countdown-timer {
@@ -510,7 +468,7 @@
 
         @media (max-width: 480px) {
             .nav-menu {
-                gap: 20px;
+                gap: 15px;
             }
 
             .hero {
@@ -549,15 +507,9 @@
             <div class="nav-container">
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="#" class="nav-link active" data-page="home">Ana Sayfa</a></li>
-                    <li><a href="#" class="nav-link" data-page="details">Detaylar</a></li>
                     <li><a href="#" class="nav-link" data-page="interaction">Mesajlar</a></li>
                     <li><a href="#" class="nav-link" data-page="countdown">Geri Sayım</a></li>
                 </ul>
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </nav>
@@ -579,10 +531,8 @@
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- DETAYLAR SAYFASI -->
-    <div id="details" class="page">
+        <!-- DETAYLAR BÖLÜMÜ -->
         <section class="details-section">
             <div class="container">
                 <h2 class="section-title">Etkinlik Detayları</h2>
@@ -721,8 +671,6 @@
         // Sayfa geçiş sistemi
         const pages = document.querySelectorAll(".page");
         const navLinks = document.querySelectorAll(".nav-link");
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("navMenu");
 
         function showPage(pageId) {
             pages.forEach(page => page.classList.remove("active"));
@@ -733,9 +681,6 @@
 
             navLinks.forEach(link => link.classList.remove("active"));
             document.querySelector(`[data-page="${pageId}"]`).classList.add("active");
-
-            navMenu.classList.remove("active");
-            hamburger.classList.remove("active");
         }
 
         navLinks.forEach(link => {
@@ -744,12 +689,6 @@
                 const pageId = link.getAttribute("data-page");
                 showPage(pageId);
             });
-        });
-
-        // Mobil menü
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-            hamburger.classList.toggle("active");
         });
 
         // Geri sayım timer
