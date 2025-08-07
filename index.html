@@ -17,7 +17,7 @@
       rel="stylesheet"
     />
     <style>
-      /* ===== GENEL STILLER ===== */
+      /* Mevcut CSS kodlarınız aynı kalacak */
       * {
         margin: 0;
         padding: 0;
@@ -38,7 +38,7 @@
         padding: 0 20px;
       }
 
-      /* ===== NAVIGASYON ===== */
+      /* NAVIGASYON */
       .navbar {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
@@ -96,7 +96,7 @@
         width: 100%;
       }
 
-      /* ===== MOBİL MENÜ ===== */
+      /* MOBİL MENÜ */
       .hamburger {
         display: none;
         flex-direction: column;
@@ -112,7 +112,7 @@
         transition: 0.3s;
       }
 
-      /* ===== SAYFA İÇERİKLERİ ===== */
+      /* SAYFA İÇERİKLERİ */
       .page {
         display: none;
         min-height: 100vh;
@@ -123,7 +123,7 @@
         display: block;
       }
 
-      /* ===== ANA SAYFA ===== */
+      /* ANA SAYFA */
       .hero {
         background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
         color: rgb(4, 4, 62);
@@ -142,23 +142,6 @@
         bottom: 0;
         background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
         animation: float 20s ease-in-out infinite;
-      }
-
-      .hero::after {
-        content: "";
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
-        height: 100%;
-        background-image: url("isimler.png");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.2;
-        z-index: 1;
-        pointer-events: none;
       }
 
       @keyframes float {
@@ -212,7 +195,7 @@
         }
       }
 
-      /* ===== DETAY SAYFASI ===== */
+      /* DETAY SAYFASI */
       .details-section {
         padding: 80px 0;
         background: white;
@@ -299,7 +282,7 @@
         border-radius: 10px;
       }
 
-      /* ===== ETKİLEŞİM SAYFASI ===== */
+      /* ETKİLEŞİM SAYFASI */
       .interaction-section {
         padding: 80px 0;
         background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -347,34 +330,6 @@
         resize: vertical;
       }
 
-      .file-input-container {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        width: 100%;
-      }
-
-      .file-input {
-        position: absolute;
-        left: -9999px;
-      }
-
-      .file-input-label {
-        display: block;
-        padding: 12px 15px;
-        background: #f8f9fa;
-        border: 2px dashed #b19cd9;
-        border-radius: 10px;
-        text-align: center;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .file-input-label:hover {
-        background: #b19cd9;
-        color: white;
-      }
-
       .btn {
         background: linear-gradient(45deg, #b19cd9, #87ceeb);
         color: white;
@@ -393,38 +348,7 @@
         box-shadow: 0 10px 20px rgba(177, 156, 217, 0.3);
       }
 
-      .messages-container {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .message-card {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        border-left: 4px solid #b19cd9;
-      }
-
-      .message-author {
-        font-weight: 600;
-        color: #b19cd9;
-        margin-bottom: 10px;
-      }
-
-      .message-text {
-        color: #666;
-        line-height: 1.6;
-      }
-
-      .message-date {
-        font-size: 0.9rem;
-        color: #999;
-        margin-top: 10px;
-      }
-
-      /* ===== SAYAÇ SAYFASI ===== */
+      /* GERİ SAYIM SAYFASI */
       .countdown-section {
         padding: 80px 0;
         background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
@@ -433,17 +357,6 @@
         min-height: 100vh;
         display: flex;
         align-items: center;
-      }
-
-      .countdown-container::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-        animation: float 20s ease-in-out infinite;
       }
 
       .countdown-container {
@@ -500,40 +413,34 @@
         opacity: 0.9;
       }
 
-      /* ===== ADMIN GİRİŞ BUTONU ===== */
-      .admin-access-btn {
-        background: linear-gradient(45deg, #6c757d, #495057);
+      /* Başarı mesajı */
+      .success-message {
+        background: #4caf50;
         color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        cursor: pointer;
-        margin-bottom: 20px;
-        transition: all 0.3s ease;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 20px 0;
+        display: none;
       }
 
-      .admin-access-btn:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+      .success-message.show {
+        display: block;
+        animation: slideInDown 0.3s ease-out;
       }
 
-      .admin-logout-btn {
-        background: #dc3545;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
       }
 
-      .admin-logout-btn:hover {
-        background: #c82333;
-      }
-
-      /* ===== RESPONSİVE TASARIM ===== */
+      /* RESPONSİVE TASARIM */
       @media (max-width: 768px) {
         .nav-menu {
           position: fixed;
@@ -612,76 +519,15 @@
         }
       }
 
-      /* ===== ANİMASYONLAR ===== */
-      .fade-in {
-        animation: fadeIn 0.5s ease-in;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      .slide-up {
-        animation: slideUp 0.6s ease-out;
-      }
-
-      @keyframes slideUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      /* ===== ÖZEL EFEKTLER ===== */
-      .sparkle {
-        position: relative;
-        overflow: hidden;
-      }
-
-      .sparkle::before {
-        content: "✨";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        animation: sparkle 2s ease-in-out infinite;
-      }
-
-      @keyframes sparkle {
-        0%,
-        100% {
-          opacity: 0;
-          transform: scale(0.5);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1);
-        }
-      }
-
-      /* ===== YÜKLEME ANİMASYONU ===== */
-      .loading {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: white;
-        animation: spin 1s ease-in-out infinite;
-      }
-
-      @keyframes spin {
-        to {
-          transform: rotate(360deg);
-        }
+      /* Dosya yükleme uyarısı */
+      .file-notice {
+        background: #ffeaa7;
+        border: 1px solid #fdcb6e;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        margin-top: 10px;
+        color: #e17055;
       }
     </style>
   </head>
@@ -722,7 +568,7 @@
               Söz verdik birbirimize; sevgiyle, saygıyla, umutla... <br />İlk
               adımımızı kutlamaya davetlisiniz!
             </h1>
-            <div class="date-info sparkle">
+            <div class="date-info">
               <p class="subtitle">Nişan Töreni</p>
               <p class="subtitle"><strong>30 Ağustos 2025 - 19:00</strong></p>
               <p class="subtitle">Trend Davet</p>
@@ -739,7 +585,7 @@
           <h2 class="section-title">Etkinlik Detayları</h2>
 
           <div class="details-grid">
-            <div class="detail-card slide-up">
+            <div class="detail-card">
               <div class="detail-icon">
                 <i class="fas fa-calendar-alt"></i>
               </div>
@@ -747,7 +593,7 @@
               <p class="detail-text">30 Ağustos 2025<br />Cumartesi</p>
             </div>
 
-            <div class="detail-card slide-up">
+            <div class="detail-card">
               <div class="detail-icon">
                 <i class="fas fa-clock"></i>
               </div>
@@ -755,7 +601,7 @@
               <p class="detail-text">19:00</p>
             </div>
 
-            <div class="detail-card slide-up">
+            <div class="detail-card">
               <div class="detail-icon">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
@@ -787,16 +633,38 @@
         <div class="container">
           <h2 class="section-title">Mesajınızı Bırakın</h2>
 
+          <!-- Başarı mesajı -->
+          <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi!
+            Teşekkür ederiz 💙
+          </div>
+
           <div class="form-container">
-            <form id="messageForm">
+            <!-- Netlify Forms için gerekli ayarlar -->
+            <form
+              name="nisan-mesajlari"
+              method="POST"
+              data-netlify="true"
+              enctype="multipart/form-data"
+              id="messageForm"
+            >
+              <input type="hidden" name="form-name" value="nisan-mesajlari" />
+
               <div class="form-group">
                 <label for="guestName" class="form-label">Adınız:</label>
-                <input type="text" id="guestName" class="form-input" required />
+                <input
+                  type="text"
+                  name="isim"
+                  id="guestName"
+                  class="form-input"
+                  required
+                />
               </div>
 
               <div class="form-group">
                 <label for="guestMessage" class="form-label">Mesajınız:</label>
                 <textarea
+                  name="mesaj"
                   id="guestMessage"
                   class="form-textarea"
                   placeholder="Güzel dileklerinizi buraya yazabilirsiniz..."
@@ -806,53 +674,26 @@
 
               <div class="form-group">
                 <label class="form-label">Fotoğraf veya Video:</label>
-                <div class="file-input-container">
-                  <input
-                    type="file"
-                    id="guestFile"
-                    class="file-input"
-                    accept="image/*,video/*"
-                    multiple
-                  />
-                  <label for="guestFile" class="file-input-label">
-                    <i class="fas fa-cloud-upload-alt"></i> Dosya Seçin (İsteğe
-                    Bağlı)
-                  </label>
+                <input
+                  type="file"
+                  name="dosyalar"
+                  id="guestFile"
+                  accept="image/*,video/*"
+                  multiple
+                  style="
+                    width: 100%;
+                    padding: 10px;
+                    border: 2px solid #e9ecef;
+                    border-radius: 10px;
+                  "
+                />
+                <div class="file-notice">
+                  <strong>Not:</strong>Birden fazla dosya seçebilirsiniz.
                 </div>
-                <small style="color: #666; margin-top: 5px; display: block">
-                  Fotoğraf veya video yükleyebilirsiniz. Birden fazla dosya
-                  seçilebilir.
-                </small>
               </div>
 
-              <button type="submit" class="btn">
-                <span id="submitText">Mesajı Gönder</span>
-                <span
-                  id="submitLoader"
-                  class="loading"
-                  style="display: none"
-                ></span>
-              </button>
+              <button type="submit" class="btn">Mesajı Gönder</button>
             </form>
-          </div>
-
-          <div class="messages-container" id="messagesContainer">
-            <!-- Admin giriş butonu -->
-            <div style="text-align: center; margin-bottom: 20px">
-              <button id="adminAccessBtn" class="admin-access-btn">
-                <i class="fas fa-lock"></i> Mesajları Görüntüle (Admin)
-              </button>
-            </div>
-
-            <!-- Mesajlar burada görünecek -->
-            <div id="messagesDisplay">
-              <h3 style="text-align: center; margin-bottom: 30px; color: #333">
-                Misafir Mesajları
-              </h3>
-              <p style="text-align: center; color: #666">
-                Mesajları görüntülemek için admin girişi yapın.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -888,41 +729,28 @@
     </div>
 
     <script>
-      // ===== GENEL DEĞİŞKENLER =====
+      // Sayfa geçiş sistemi
       const pages = document.querySelectorAll(".page");
       const navLinks = document.querySelectorAll(".nav-link");
       const hamburger = document.getElementById("hamburger");
       const navMenu = document.getElementById("navMenu");
 
-      // ===== SAYFA GEÇİŞİ =====
       function showPage(pageId) {
-        // Tüm sayfaları gizle
-        pages.forEach((page) => {
-          page.classList.remove("active");
-        });
-
-        // Seçilen sayfayı göster
+        pages.forEach((page) => page.classList.remove("active"));
         const targetPage = document.getElementById(pageId);
         if (targetPage) {
           targetPage.classList.add("active");
-          targetPage.classList.add("fade-in");
         }
 
-        // Aktif nav linki güncelle
-        navLinks.forEach((link) => {
-          link.classList.remove("active");
-        });
-
+        navLinks.forEach((link) => link.classList.remove("active"));
         document
           .querySelector(`[data-page="${pageId}"]`)
           .classList.add("active");
 
-        // Mobil menüyü kapat
         navMenu.classList.remove("active");
         hamburger.classList.remove("active");
       }
 
-      // ===== NAVİGASYON OLAYLARI =====
       navLinks.forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
@@ -931,22 +759,13 @@
         });
       });
 
-      // ===== MOBİL MENÜ =====
+      // Mobil menü
       hamburger.addEventListener("click", () => {
         navMenu.classList.toggle("active");
         hamburger.classList.toggle("active");
       });
 
-      // Menü dışına tıklandığında menüyü kapat
-      document.addEventListener("click", (e) => {
-        if (!navMenu.contains(e.target) && !hamburger.contains(e.target)) {
-          navMenu.classList.remove("active");
-          hamburger.classList.remove("active");
-        }
-      });
-
-      // ===== GERİ SAYIM TİMERI =====
-      // Nişan tarihi: 30 Ağustos 2025, 19:00 (Türkiye saati)
+      // Geri sayım timer
       const engagementDate = new Date("2025-08-30T19:00:00+03:00").getTime();
 
       function updateCountdown() {
@@ -963,686 +782,49 @@
           );
           const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-          // DOM elementlerini güncelle
           document.getElementById("days").textContent = days;
           document.getElementById("hours").textContent = hours;
           document.getElementById("minutes").textContent = minutes;
           document.getElementById("seconds").textContent = seconds;
         } else {
-          // Süre dolduğunda
           document.getElementById("days").textContent = "0";
           document.getElementById("hours").textContent = "0";
           document.getElementById("minutes").textContent = "0";
           document.getElementById("seconds").textContent = "0";
-
-          // Kutlama mesajı göster
           document.querySelector(".countdown-title").innerHTML =
             "🎉 Nişan Günümüz Geldi! 🎉";
         }
       }
 
-      // Timer'ı her saniye güncelle
       setInterval(updateCountdown, 1000);
-      updateCountdown(); // İlk yüklemede çalıştır
+      updateCountdown();
 
-      // ===== MESAJ FORMU =====
-      const messageForm = document.getElementById("messageForm");
-      const messagesContainer = document.getElementById("messagesContainer");
-      const messagesDisplay = document.getElementById("messagesDisplay");
-      const adminAccessBtn = document.getElementById("adminAccessBtn");
-      const submitText = document.getElementById("submitText");
-      const submitLoader = document.getElementById("submitLoader");
+      // Form başarı mesajı gösterme
+      const form = document.getElementById("messageForm");
+      const successMessage = document.getElementById("successMessage");
 
-      // Admin şifresi - mesajları görmek için gerekli
-      const ADMIN_PASSWORD = "AlpSen300322"; // Şifreyi değiştirebilirsiniz
-      let isAdminLoggedIn = false;
+      // URL'den başarı durumunu kontrol et
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get("success") === "true") {
+        successMessage.classList.add("show");
+        showPage("interaction"); // Mesajlar sayfasını göster
 
-      // ===== ÇOKLU YEDEKLEME SİSTEMİ =====
-      function createMultipleBackups(messageData) {
-        try {
-          // 1. Ana LocalStorage (mevcut)
-          const messages = JSON.parse(
-            localStorage.getItem("engagementMessages") || "[]"
-          );
-          messages.unshift(messageData);
-          localStorage.setItem("engagementMessages", JSON.stringify(messages));
-
-          // 2. Yedek LocalStorage
-          const backupMessages = JSON.parse(
-            localStorage.getItem("engagementBackup") || "[]"
-          );
-          backupMessages.unshift(messageData);
-          localStorage.setItem(
-            "engagementBackup",
-            JSON.stringify(backupMessages)
-          );
-
-          // 3. SessionStorage yedekleme
-          const sessionBackup = JSON.parse(
-            sessionStorage.getItem("engagementTemp") || "[]"
-          );
-          sessionBackup.unshift(messageData);
-          sessionStorage.setItem(
-            "engagementTemp",
-            JSON.stringify(sessionBackup)
-          );
-
-          // 4. IndexedDB yedekleme (modern tarayıcılarda)
-          saveToIndexedDB(messageData);
-
-          console.log("✅ Veri 5 farklı yere kaydedildi!");
-        } catch (error) {
-          console.error("Yedekleme hatası:", error);
-          throw error;
-        }
-      }
-
-      // IndexedDB ile kalıcı yedekleme
-      function saveToIndexedDB(messageData) {
-        if (!window.indexedDB) return;
-
-        const request = indexedDB.open("EngagementDB", 1);
-
-        request.onupgradeneeded = function (e) {
-          const db = e.target.result;
-          if (!db.objectStoreNames.contains("messages")) {
-            db.createObjectStore("messages", { keyPath: "id" });
-          }
-        };
-
-        request.onsuccess = function (e) {
-          const db = e.target.result;
-          const transaction = db.transaction(["messages"], "readwrite");
-          const store = transaction.objectStore("messages");
-          store.add(messageData);
-        };
-      }
-
-      // Yedekleri dışa aktarma fonksiyonu
-      function exportAllBackups() {
-        if (!isAdminLoggedIn) {
-          alert("Bu işlem için admin girişi gerekli");
-          return;
-        }
-
-        const allData = {
-          timestamp: new Date().toISOString(),
-          localStorage_main: JSON.parse(
-            localStorage.getItem("engagementMessages") || "[]"
-          ),
-          localStorage_backup: JSON.parse(
-            localStorage.getItem("engagementBackup") || "[]"
-          ),
-          sessionStorage: JSON.parse(
-            sessionStorage.getItem("engagementTemp") || "[]"
-          ),
-        };
-
-        const dataStr = JSON.stringify(allData, null, 2);
-        const dataBlob = new Blob([dataStr], { type: "application/json" });
-
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(dataBlob);
-        link.download = `nisan-mesajlari-yedek-${
-          new Date().toISOString().split("T")[0]
-        }.json`;
-        link.click();
-
-        showNotification(
-          "Tüm veriler JSON dosyası olarak indirildi! 📁",
-          "success"
-        );
-      }
-
-      // Global export fonksiyonu
-      window.exportAllBackups = exportAllBackups;
-
-      // Admin giriş butonu olayı
-      adminAccessBtn.addEventListener("click", () => {
-        if (!isAdminLoggedIn) {
-          const password = prompt(
-            "Mesajları görüntülemek için admin şifresini girin:"
-          );
-          if (password === ADMIN_PASSWORD) {
-            isAdminLoggedIn = true;
-            loadMessages();
-            adminAccessBtn.innerHTML =
-              '<i class="fas fa-sign-out-alt"></i> Admin Çıkışı';
-            adminAccessBtn.className = "admin-logout-btn";
-          } else if (password !== null) {
-            alert("Yanlış şifre!");
-          }
-        } else {
-          // Admin çıkışı
-          isAdminLoggedIn = false;
-          messagesDisplay.innerHTML = `
-            <h3 style="text-align: center; margin-bottom: 30px; color: #333">
-              Misafir Mesajları
-            </h3>
-            <p style="text-align: center; color: #666;">
-              Mesajları görüntülemek için admin girişi yapın.
-            </p>
-          `;
-          adminAccessBtn.innerHTML =
-            '<i class="fas fa-lock"></i> Mesajları Görüntüle (Admin)';
-          adminAccessBtn.className = "admin-access-btn";
-        }
-      });
-
-      // LocalStorage'dan mesajları yükle
-      function loadMessages() {
-        const messages = JSON.parse(
-          localStorage.getItem("engagementMessages") || "[]"
-        );
-        displayMessages(messages);
-      }
-
-      // Mesajları ekranda göster
-      function displayMessages(messages) {
-        if (!isAdminLoggedIn) {
-          return;
-        }
-
-        const messagesHtml = messages
-          .map(
-            (message) => `
-          <div class="message-card slide-up">
-            <div class="message-author">${escapeHtml(message.name)}</div>
-            <div class="message-text">${escapeHtml(message.message)}</div>
-            <div class="message-date">${formatDate(message.date)}</div>
-            ${
-              message.files && message.files.length > 0
-                ? `
-              <div style="margin-top: 15px;">
-                <strong>Paylaşılan dosyalar:</strong>
-                <div style="margin-top: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
-                  ${message.files
-                    .map(
-                      (file) => `
-                    <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background: #f9f9f9;">
-                      ${
-                        file.type.startsWith("image/")
-                          ? `
-                        <img src="${file.data}" alt="${escapeHtml(file.name)}" 
-                             style="width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 5px; cursor: pointer;"
-                             onclick="openImageModal('${
-                               file.data
-                             }', '${escapeHtml(file.name)}')">
-                      `
-                          : file.type.startsWith("video/")
-                          ? `
-                        <video controls style="width: 100%; height: 150px; border-radius: 5px; margin-bottom: 5px;">
-                          <source src="${file.data}" type="${file.type}">
-                          Tarayıcınız video oynatmayı desteklemiyor.
-                        </video>
-                      `
-                          : `
-                        <div style="width: 100%; height: 150px; display: flex; align-items: center; justify-content: center; background: #e9ecef; border-radius: 5px; margin-bottom: 5px;">
-                          <i class="fas fa-file" style="font-size: 2rem; color: #666;"></i>
-                        </div>
-                      `
-                      }
-                      <div style="font-size: 0.9rem; color: #666;">
-                        <i class="fas fa-${
-                          file.type.startsWith("image/")
-                            ? "image"
-                            : file.type.startsWith("video/")
-                            ? "video"
-                            : "file"
-                        }"></i>
-                        ${escapeHtml(file.name)} (${formatFileSize(file.size)})
-                      </div>
-                    </div>
-                  `
-                    )
-                    .join("")}
-                </div>
-              </div>
-            `
-                : ""
-            }
-          </div>
-        `
-          )
-          .join("");
-
-        messagesDisplay.innerHTML = `
-          <h3 style="text-align: center; margin-bottom: 30px; color: #333;">
-            Misafir Mesajları (${messages.length})
-          </h3>
-          <div style="text-align: center; margin-bottom: 20px;">
-            <button onclick="exportAllBackups()" style="background: #28a745; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-right: 10px;">
-              <i class="fas fa-download"></i> Yedekleri İndir
-            </button>
-            <button onclick="showBackupStatus()" style="background: #17a2b8; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">
-              <i class="fas fa-info-circle"></i> Yedek Durumu
-            </button>
-          </div>
-          ${
-            messagesHtml ||
-            '<p style="text-align: center; color: #666;">Henüz mesaj yok. İlk mesajı bekliyoruz!</p>'
-          }
-        `;
-      }
-
-      // Resim modal açma fonksiyonu
-      function openImageModal(src, name) {
-        const modal = document.createElement("div");
-        modal.style.cssText = `
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0,0,0,0.9);
-          z-index: 10000;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-        `;
-
-        modal.innerHTML = `
-          <div style="position: relative; max-width: 90%; max-height: 90%;">
-            <img src="${src}" alt="${name}" style="max-width: 100%; max-height: 100%; border-radius: 10px;">
-            <div style="position: absolute; top: -40px; right: 0; color: white; font-size: 1.5rem; cursor: pointer;">✕</div>
-          </div>
-        `;
-
-        modal.addEventListener("click", () => {
-          document.body.removeChild(modal);
-        });
-
-        document.body.appendChild(modal);
-      }
-
-      // Global fonksiyon olarak tanımla
-      window.openImageModal = openImageModal;
-
-      // HTML karakterlerini güvenli hale getir
-      function escapeHtml(text) {
-        const div = document.createElement("div");
-        div.textContent = text;
-        return div.innerHTML;
-      }
-
-      // Tarih formatla
-      function formatDate(dateString) {
-        return new Date(dateString).toLocaleString("tr-TR", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-        });
-      }
-
-      // Dosya boyutunu formatla
-      function formatFileSize(bytes) {
-        if (bytes === 0) return "0 Bytes";
-        const k = 1024;
-        const sizes = ["Bytes", "KB", "MB", "GB"];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
-      }
-
-      // Dosyayı base64 olarak oku
-      function readFileAsDataURL(file) {
-        return new Promise((resolve, reject) => {
-          const reader = new FileReader();
-          reader.onload = (e) => resolve(e.target.result);
-          reader.onerror = reject;
-          reader.readAsDataURL(file);
-        });
-      }
-
-      // Form gönderimi
-      messageForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById("guestName").value.trim();
-        const message = document.getElementById("guestMessage").value.trim();
-        const fileInput = document.getElementById("guestFile");
-
-        if (!name || !message) {
-          alert("Lütfen ad ve mesaj alanlarını doldurun.");
-          return;
-        }
-
-        // Yükleme durumunu göster
-        submitText.style.display = "none";
-        submitLoader.style.display = "inline-block";
-
-        try {
-          // Dosya bilgilerini ve içeriklerini topla
-          const files = [];
-          if (fileInput.files.length > 0) {
-            for (let file of fileInput.files) {
-              // Dosya içeriğini base64 olarak oku
-              const fileData = await readFileAsDataURL(file);
-              files.push({
-                name: file.name,
-                size: file.size,
-                type: file.type,
-                data: fileData,
-              });
-            }
-          }
-
-          // Yeni mesaj objesi
-          const newMessage = {
-            id: Date.now(),
-            name: name,
-            message: message,
-            files: files,
-            date: new Date().toISOString(),
-          };
-
-          // Mevcut mesajları al ve yenisini ekle
-          const messages = JSON.parse(
-            localStorage.getItem("engagementMessages") || "[]"
-          );
-          messages.unshift(newMessage); // En yeniler üstte
-
-          // ÇOK ÖNEMLİ: Çoklu yedekleme sistemi
-          createMultipleBackups(newMessage);
-
-          console.log("💾 Veri kaydedildi:", {
-            name: newMessage.name,
-            fileCount: newMessage.files.length,
-            timestamp: newMessage.date,
-          });
-
-          // Formu temizle
-          messageForm.reset();
-          document.querySelector(".file-input-label").innerHTML =
-            '<i class="fas fa-cloud-upload-alt"></i> Dosya Seçin (İsteğe Bağlı)';
-          document.querySelector(".file-input-label").style.background =
-            "#f8f9fa";
-          document.querySelector(".file-input-label").style.color = "#333";
-
-          // Başarı mesajı
-          showNotification("Mesajınız başarıyla gönderildi! 💙", "success");
-
-          // Formu temizle
-          messageForm.reset();
-          document.querySelector(".file-input-label").innerHTML =
-            '<i class="fas fa-cloud-upload-alt"></i> Dosya Seçin (İsteğe Bağlı)';
-          document.querySelector(".file-input-label").style.background =
-            "#f8f9fa";
-          document.querySelector(".file-input-label").style.color = "#333";
-
-          // Eğer admin girişi yapılmışsa mesajları yenile
-          if (isAdminLoggedIn) {
-            displayMessages(messages);
-          }
-        } catch (error) {
-          console.error("Mesaj gönderme hatası:", error);
-          showNotification("Bir hata oluştu. Lütfen tekrar deneyin.", "error");
-        } finally {
-          // Yükleme durumunu gizle
-          submitText.style.display = "inline";
-          submitLoader.style.display = "none";
-        }
-      });
-
-      // Dosya seçimi değiştiğinde label'ı güncelle
-      document
-        .getElementById("guestFile")
-        .addEventListener("change", function (e) {
-          const label = document.querySelector(".file-input-label");
-          const fileCount = e.target.files.length;
-
-          if (fileCount > 0) {
-            label.innerHTML = `<i class="fas fa-check"></i> ${fileCount} dosya seçildi`;
-            label.style.background = "#b19cd9";
-            label.style.color = "white";
-          } else {
-            label.innerHTML =
-              '<i class="fas fa-cloud-upload-alt"></i> Dosya Seçin (İsteğe Bağlı)';
-            label.style.background = "#f8f9fa";
-            label.style.color = "#333";
-          }
-        });
-
-      // ===== BİLDİRİM SİSTEMİ =====
-      function showNotification(message, type = "info") {
-        // Bildirim elementini oluştur
-        const notification = document.createElement("div");
-        notification.className = `notification notification-${type}`;
-        notification.innerHTML = `
-          <div style="
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${type === "success" ? "#4CAF50" : "#f44336"};
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 10000;
-            font-weight: 500;
-            max-width: 300px;
-            animation: slideInRight 0.3s ease-out;
-          ">
-            ${message}
-          </div>
-        `;
-
-        document.body.appendChild(notification);
-
-        // 3 saniye sonra kaldır
+        // Mesajı 5 saniye sonra gizle
         setTimeout(() => {
-          notification.style.animation = "slideOutRight 0.3s ease-out";
-          setTimeout(() => {
-            document.body.removeChild(notification);
-          }, 300);
-        }, 3000);
-      }
+          successMessage.classList.remove("show");
+        }, 5000);
 
-      // Bildirim animasyonları için CSS ekle
-      const notificationStyles = document.createElement("style");
-      notificationStyles.textContent = `
-        @keyframes slideInRight {
-          from {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        @keyframes slideOutRight {
-          from {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          to {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(notificationStyles);
-
-      // ===== SAYFA YÜKLENME OLAYLARI =====
-      document.addEventListener("DOMContentLoaded", function () {
-        // Scroll animasyonları için intersection observer
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: "0px 0px -50px 0px",
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("slide-up");
-            }
-          });
-        }, observerOptions);
-
-        // Animasyon için elementleri gözlemle
-        document
-          .querySelectorAll(".detail-card, .message-card")
-          .forEach((el) => {
-            observer.observe(el);
-          });
-
-        // Navbar scroll efekti
-        let lastScroll = 0;
-        window.addEventListener("scroll", () => {
-          const currentScroll = window.pageYOffset;
-          const navbar = document.querySelector(".navbar");
-
-          if (currentScroll > 100) {
-            navbar.style.background = "rgba(255, 255, 255, 0.98)";
-            navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.15)";
-          } else {
-            navbar.style.background = "rgba(255, 255, 255, 0.95)";
-            navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
-          }
-
-          lastScroll = currentScroll;
-        });
-      });
-
-      // ===== KLAVYE KISAYOLLARI =====
-      document.addEventListener("keydown", (e) => {
-        // ESC tuşu ile mobil menüyü kapat
-        if (e.key === "Escape") {
-          navMenu.classList.remove("active");
-          hamburger.classList.remove("active");
-        }
-
-        // Sayfa geçiş kısayolları - sadece input/textarea dışındayken çalış
-        if (
-          e.key >= "1" &&
-          e.key <= "4" &&
-          !e.target.matches("input, textarea") &&
-          !e.target.isContentEditable
-        ) {
-          const pages = ["home", "details", "interaction", "countdown"];
-          const pageIndex = parseInt(e.key) - 1;
-          if (pages[pageIndex]) {
-            showPage(pages[pageIndex]);
-          }
-        }
-      });
-
-      // ===== ÖZEL EFEKTLER =====
-      // Tıklama efekti
-      document.addEventListener("click", (e) => {
-        if (
-          e.target.classList.contains("btn") ||
-          e.target.classList.contains("nav-link")
-        ) {
-          const ripple = document.createElement("span");
-          ripple.classList.add("ripple");
-          ripple.style.cssText = `
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(0);
-            animation: ripple 0.6s linear;
-            pointer-events: none;
-          `;
-
-          const rect = e.target.getBoundingClientRect();
-          const size = Math.max(rect.height, rect.width);
-          ripple.style.width = ripple.style.height = size + "px";
-          ripple.style.left = e.clientX - rect.left - size / 2 + "px";
-          ripple.style.top = e.clientY - rect.top - size / 2 + "px";
-
-          e.target.style.position = "relative";
-          e.target.appendChild(ripple);
-
-          setTimeout(() => {
-            ripple.remove();
-          }, 600);
-        }
-      });
-
-      // Ripple animasyonu için CSS
-      const rippleStyles = document.createElement("style");
-      rippleStyles.textContent = `
-        @keyframes ripple {
-          to {
-            transform: scale(2);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(rippleStyles);
-
-      // ===== PERFORMANS OPTİMİZASYONU =====
-      // Debounce fonksiyonu
-      function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-          const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-          };
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-        };
-      }
-
-      // Scroll olaylarını optimize et
-      const optimizedScrollHandler = debounce(() => {
-        // Scroll ile ilgili işlemler burada
-      }, 10);
-
-      window.addEventListener("scroll", optimizedScrollHandler);
-
-      // ===== HATA YÖNETİMİ =====
-      window.addEventListener("error", (e) => {
-        console.error("Bir hata oluştu:", e.error);
-        // Kullanıcıya hata bildirimi gösterme (isteğe bağlı)
-      });
-
-      // Yedek durumu gösterme fonksiyonu
-      function showBackupStatus() {
-        if (!isAdminLoggedIn) return;
-
-        const mainCount = JSON.parse(
-          localStorage.getItem("engagementMessages") || "[]"
-        ).length;
-        const backupCount = JSON.parse(
-          localStorage.getItem("engagementBackup") || "[]"
-        ).length;
-        const sessionCount = JSON.parse(
-          sessionStorage.getItem("engagementTemp") || "[]"
-        ).length;
-
-        const statusMessage = `
-📊 YEDEK DURUM RAPORU:
-
-🗂️ Ana Depolama: ${mainCount} mesaj
-💾 Yedek Depolama: ${backupCount} mesaj  
-⚡ Geçici Depolama: ${sessionCount} mesaj
-🗃️ IndexedDB: ${window.indexedDB ? "Destekleniyor ✅" : "Desteklenmiyor ❌"}
-
-Her mesaj 5 farklı yere kaydediliyor!
-        `;
-
-        alert(statusMessage);
-      }
-
-      // Global fonksiyon
-      window.showBackupStatus = showBackupStatus;
-
-      // ===== BROWSER COMPATIBILITY =====
-      // Modern browser özelliklerinin varlığını kontrol et
-      if (!window.IntersectionObserver) {
-        // Fallback for older browsers
-        document
-          .querySelectorAll(".detail-card, .message-card")
-          .forEach((el) => {
-            el.classList.add("slide-up");
-          });
+        // URL'den parametreyi temizle
+        const newUrl = window.location.pathname;
+        history.replaceState({}, document.title, newUrl);
       }
     </script>
+
+    <!-- Netlify Forms için gerekli hidden form -->
+    <form name="nisan-mesajlari" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="isim" />
+      <textarea name="mesaj"></textarea>
+      <input type="file" name="dosyalar" multiple />
+    </form>
   </body>
 </html>
