@@ -328,6 +328,12 @@
             box-shadow: 0 10px 20px rgba(177, 156, 217, 0.3);
         }
 
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
         /* GERİ SAYIM SAYFASI */
         .countdown-section {
             padding: 80px 0;
@@ -389,10 +395,8 @@
             opacity: 0.9;
         }
 
-        /* Başarı mesajı */
-        .success-message {
-            background: #4CAF50;
-            color: white;
+        /* Başarı ve hata mesajları */
+        .success-message, .error-message {
             padding: 15px;
             border-radius: 10px;
             text-align: center;
@@ -400,7 +404,17 @@
             display: none;
         }
 
-        .success-message.show {
+        .success-message {
+            background: #4CAF50;
+            color: white;
+        }
+
+        .error-message {
+            background: #f44336;
+            color: white;
+        }
+
+        .success-message.show, .error-message.show {
             display: block;
             animation: slideInDown 0.3s ease-out;
         }
@@ -561,7 +575,7 @@
                         </div>
                         <h3 class="detail-title">Saat</h3>
                         <p class="detail-text">19:00</p>
-                    </div>
+                        </div>
 
                     <div class="detail-card">
                         <div class="detail-icon">
@@ -595,15 +609,21 @@
             <div class="container">
                 <h2 class="section-title">Mesajınızı Bırakın</h2>
 
-                <!-- Başarı mesajı -->
+                <!-- Başarı ve hata mesajları -->
                 <div id="successMessage" class="success-message">
                     <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi! Teşekkür ederiz 💙
                 </div>
+                <div id="errorMessage" class="error-message">
+                    <i class="fas fa-exclamation-circle"></i> Mesaj gönderilirken bir hata oluştu. Lütfen tekrar deneyin.
+                </div>
 
                 <div class="form-container">
-                    <!-- Netlify Forms için gerekli ayarlar -->
-                    <form name="nisan-mesajlari" method="POST" data-netlify="true" enctype="multipart/form-data" id="messageForm" action="/thank-you.html">
-                        <input type="hidden" name="form-name" value="nisan-mesajlari" />
+                    <!-- Netlify Forms için düzeltilmiş form -->
+                    <form name="nisan-mesajlari" method="POST" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" id="messageForm">
+                        <!-- Honeypot field (spam koruması) -->
+                        <p style="display: none;">
+                            <label>Don't fill this out: <input name="bot-field" /></label>
+                        </p>
                         
                         <div class="form-group">
                             <label for="guestName" class="form-label">Adınız:</label>
@@ -637,7 +657,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn">
+                        <button type="submit" class="btn" id="submitBtn">
                             Mesajı Gönder
                         </button>
                     </form>
@@ -744,68 +764,51 @@
         setInterval(updateCountdown, 1000);
         updateCountdown();
 
-        // Form gönderimi ve yönlendirme kontrolü
+        // Netlify Forms entegrasyonu
         const form = document.getElementById('messageForm');
         const successMessage = document.getElementById('successMessage');
+        const errorMessage = document.getElementById('errorMessage');
+        const submitBtn = document.getElementById('submitBtn');
 
-        // Netlify form gönderimi - JavaScript ile kontrol
+        // Form gönderim kontrolü
         form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Varsayılan form gönderimini engelle
-            
-            const formData = new FormData(this);
-            
-            // Loading durumu göster
-            const submitBtn = form.querySelector('button[type="submit"]');
+            // Loading durumu
             const originalText = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
             submitBtn.disabled = true;
-            
-            // Netlify'e form gönder
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(() => {
-                // Başarı durumunda
-                successMessage.classList.add('show');
-                form.reset();
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-                
-                // 5 saniye sonra mesajı gizle
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            })
-            .catch((error) => {
-                // Hata durumunda
-                alert('Bir hata oluştu. Lütfen tekrar deneyin.');
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
+
+            // Mesajları gizle
+            successMessage.classList.remove('show');
+            errorMessage.classList.remove('show');
+
+            // Form normal şekilde Netlify'e gönderilecek
+            // Başarı durumu URL parametresiyle kontrol edilecek
         });
 
-        // URL'den başarı durumunu kontrol et
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('success') === 'true') {
-            successMessage.classList.add('show');
-            showPage('interaction');
+        // URL'den form durumunu kontrol et
+        function checkFormStatus() {
+            const urlParams = new URLSearchParams(window.location.search);
             
-            setTimeout(() => {
-                successMessage.classList.remove('show');
-            }, 5000);
-
-            const newUrl = window.location.pathname;
-            history.replaceState({}, document.title, newUrl);
+            if (urlParams.has('form-submitted')) {
+                // Başarı durumu
+                successMessage.classList.add('show');
+                showPage('interaction');
+                
+                // 5 saniye sonra mesajı gizle ve URL'i temizle
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    // URL'i temizle
+                    const cleanUrl = window.location.pathname;
+                    history.replaceState({}, document.title, cleanUrl);
+                }, 5000);
+            }
         }
-    </script>
 
-    <!-- Netlify Forms için gerekli hidden form -->
-    <form name="nisan-mesajlari" netlify netlify-honeypot="bot-field" hidden>
-        <input type="text" name="isim" />
-        <textarea name="mesaj"></textarea>
-        <input type="file" name="dosyalar" multiple />
-    </form>
+        // Sayfa yüklendiğinde kontrol et
+        checkFormStatus();
+
+        // Netlify'nin form başarı yönlendirmesi için success page oluştur
+        // veya form action'ı "?form-submitted=true" ile değiştir
+    </script>
 </body>
 </html>
