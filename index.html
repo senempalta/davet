@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Mevcut CSS kodlarınız aynı kalacak */
         * {
             margin: 0;
             padding: 0;
@@ -618,7 +617,6 @@
                 </div>
 
                 <div class="form-container">
-                    <!-- Netlify Forms için düzeltilmiş form -->
                     <form name="nisan-mesajlari" method="POST" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" id="messageForm">
                         <!-- Honeypot field (spam koruması) -->
                         <p style="display: none;">
@@ -651,21 +649,12 @@
                                 multiple
                                 style="width: 100%; padding: 10px; border: 2px solid #e9ecef; border-radius: 10px;"
                             />
-                            <div class="file-notice">
-                                <strong>Not:</strong> Dosyalar e-posta olarak size iletilecektir. 
-                                Birden fazla dosya seçebilirsiniz (Ctrl+Click ile).
-                            </div>
                         </div>
 
                         <button type="submit" class="btn" id="submitBtn">
                             Mesajı Gönder
                         </button>
                     </form>
-                </div>
-
-                <div style="text-align: center; color: #666; margin-top: 30px;">
-                    <p>📧 Tüm mesajlar size e-posta olarak iletilecektir.</p>
-                    <p>💌 Misafirlerinizden gelen güzel mesajları kaçırmayacaksınız!</p>
                 </div>
             </div>
         </section>
