@@ -1,830 +1,811 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Senem & Alperen - Nişan Davetimiz</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nunito:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-      /* Mevcut CSS kodlarınız aynı kalacak */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        color: #333;
-        line-height: 1.6;
-        overflow-x: hidden;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* NAVIGASYON */
-      .navbar {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 15px 0;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-      }
-
-      .nav-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .nav-menu {
-        display: flex;
-        list-style: none;
-        gap: 30px;
-      }
-
-      .nav-link {
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-        transition: all 0.3s ease;
-        position: relative;
-        padding: 10px 0;
-      }
-
-      .nav-link:hover {
-        color: #b19cd9;
-      }
-
-      .nav-link.active {
-        color: #b19cd9;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #b19cd9;
-        transition: all 0.3s ease;
-      }
-
-      .nav-link:hover::after,
-      .nav-link.active::after {
-        width: 100%;
-      }
-
-      /* MOBİL MENÜ */
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        padding: 5px;
-      }
-
-      .hamburger span {
-        width: 25px;
-        height: 3px;
-        background: #333;
-        margin: 3px 0;
-        transition: 0.3s;
-      }
-
-      /* SAYFA İÇERİKLERİ */
-      .page {
-        display: none;
-        min-height: 100vh;
-        padding-top: 80px;
-      }
-
-      .page.active {
-        display: block;
-      }
-
-      /* ANA SAYFA */
-      .hero {
-        background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
-        color: rgb(4, 4, 62);
-        text-align: center;
-        padding: 100px 0 80px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-        animation: float 20s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0) rotate(0deg);
+        /* Mevcut CSS kodlarınız aynı kalacak */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        50% {
-          transform: translateY(-20px) rotate(180deg);
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-      }
 
-      .hero-content {
-        position: relative;
-        z-index: 2;
-      }
-
-      .main-title {
-        font-family: "Dancing Script", sans-serif;
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        font-weight: 700;
-        margin-bottom: 20px;
-        animation: fadeInUp 1s ease-out;
-      }
-
-      .subtitle {
-        font-size: clamp(1rem, 3vw, 1.3rem);
-        font-weight: 300;
-        opacity: 0.9;
-        animation: fadeInUp 1s ease-out 0.3s both;
-      }
-
-      .date-info {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        padding: 20px;
-        border-radius: 15px;
-        margin: 100px auto;
-        max-width: 500px;
-        animation: fadeInUp 1s ease-out 0.6s both;
-      }
-
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-        to {
-          opacity: 1;
-          transform: translateY(0);
+
+        /* NAVIGASYON */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
         }
-      }
 
-      /* DETAY SAYFASI */
-      .details-section {
-        padding: 80px 0;
-        background: white;
-      }
-
-      .section-title {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 60px;
-        color: #333;
-        position: relative;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 3px;
-        background: linear-gradient(45deg, #b19cd9, #87ceeb);
-        border-radius: 2px;
-      }
-
-      .details-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 40px;
-        margin-bottom: 60px;
-      }
-
-      .detail-card {
-        background: #f8f9fa;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .detail-card:hover {
-        transform: translateY(-5px);
-        border-color: #b19cd9;
-        box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
-      }
-
-      .detail-icon {
-        font-size: 3rem;
-        color: #b19cd9;
-        margin-bottom: 20px;
-      }
-
-      .detail-title {
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #333;
-      }
-
-      .detail-text {
-        color: #666;
-        font-size: 1.1rem;
-      }
-
-      .map-container {
-        background: white;
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .map-title {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        color: #333;
-        text-align: center;
-      }
-
-      .map-embed {
-        width: 100%;
-        height: 400px;
-        border: none;
-        border-radius: 10px;
-      }
-
-      /* ETKİLEŞİM SAYFASI */
-      .interaction-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-      }
-
-      .form-container {
-        background: white;
-        padding: 30px;
-        border-radius: 20px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-        margin: 0 auto 40px;
-      }
-
-      .form-group {
-        margin-bottom: 20px;
-      }
-
-      .form-label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: 500;
-        color: #333;
-      }
-
-      .form-input,
-      .form-textarea {
-        width: 100%;
-        padding: 12px 15px;
-        border: 2px solid #e9ecef;
-        border-radius: 10px;
-        font-family: "Poppins", sans-serif;
-        font-size: 16px;
-        transition: all 0.3s ease;
-      }
-
-      .form-input:focus,
-      .form-textarea:focus {
-        outline: none;
-        border-color: #b19cd9;
-        box-shadow: 0 0 0 3px rgba(177, 156, 217, 0.1);
-      }
-
-      .form-textarea {
-        min-height: 120px;
-        resize: vertical;
-      }
-
-      .btn {
-        background: linear-gradient(45deg, #b19cd9, #87ceeb);
-        color: white;
-        padding: 15px 30px;
-        border: none;
-        border-radius: 10px;
-        font-size: 1rem;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        width: 100%;
-      }
-
-      .btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(177, 156, 217, 0.3);
-      }
-
-      /* GERİ SAYIM SAYFASI */
-      .countdown-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
-        color: rgb(4, 4, 62);
-        text-align: center;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-      }
-
-      .countdown-container {
-        width: 100%;
-      }
-
-      .countdown-title {
-        font-size: clamp(2rem, 5vw, 3rem);
-        font-weight: 600;
-        margin-bottom: 50px;
-        animation: pulse 2s ease-in-out infinite alternate;
-      }
-
-      @keyframes pulse {
-        from {
-          opacity: 0.8;
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        to {
-          opacity: 1;
-        }
-      }
 
-      .countdown-timer {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-
-      .countdown-item {
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        padding: 30px 20px;
-        border-radius: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .countdown-item:hover {
-        transform: scale(1.05);
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      .countdown-number {
-        font-size: clamp(2rem, 6vw, 3rem);
-        font-weight: 700;
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      .countdown-label {
-        font-size: 1rem;
-        font-weight: 300;
-        opacity: 0.9;
-      }
-
-      /* Başarı mesajı */
-      .success-message {
-        background: #4caf50;
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        text-align: center;
-        margin: 20px 0;
-        display: none;
-      }
-
-      .success-message.show {
-        display: block;
-        animation: slideInDown 0.3s ease-out;
-      }
-
-      @keyframes slideInDown {
-        from {
-          transform: translateY(-20px);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      /* RESPONSİVE TASARIM */
-      @media (max-width: 768px) {
         .nav-menu {
-          position: fixed;
-          top: 70px;
-          left: -100%;
-          width: 100%;
-          height: calc(100vh - 70px);
-          background: white;
-          flex-direction: column;
-          justify-content: start;
-          align-items: center;
-          padding-top: 50px;
-          transition: all 0.3s ease;
-          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
 
-        .nav-menu.active {
-          left: 0;
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 0;
         }
 
+        .nav-link:hover {
+            color: #b19cd9;
+        }
+
+        .nav-link.active {
+            color: #b19cd9;
+        }
+
+        .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b19cd9;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* MOBİL MENÜ */
         .hamburger {
-          display: flex;
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
         }
 
-        .hamburger.active span:nth-child(1) {
-          transform: rotate(-45deg) translate(-5px, 6px);
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
         }
 
-        .hamburger.active span:nth-child(2) {
-          opacity: 0;
+        /* SAYFA İÇERİKLERİ */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
         }
 
-        .hamburger.active span:nth-child(3) {
-          transform: rotate(45deg) translate(-5px, -6px);
+        .page.active {
+            display: block;
         }
 
-        .countdown-timer {
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
+        /* ANA SAYFA */
+        .hero {
+            background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
+            color: rgb(4, 4, 62);
+            text-align: center;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .countdown-item {
-          padding: 20px 15px;
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s ease-in-out infinite;
         }
 
-        .form-container {
-          margin: 0 20px 40px;
-          padding: 30px 20px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .main-title {
+            font-family: "Dancing Script", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-weight: 300;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .date-info {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 100px auto;
+            max-width: 500px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* DETAY SAYFASI */
+        .details-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #b19cd9, #87ceeb);
+            border-radius: 2px;
         }
 
         .details-grid {
-          grid-template-columns: 1fr;
-          gap: 30px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .nav-menu {
-          gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
-        .hero {
-          padding: 60px 0 40px;
+        .detail-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
         }
 
-        .details-section,
-        .interaction-section,
+        .detail-card:hover {
+            transform: translateY(-5px);
+            border-color: #b19cd9;
+            box-shadow: 0 15px 30px rgba(177, 156, 217, 0.2);
+        }
+
+        .detail-icon {
+            font-size: 3rem;
+            color: #b19cd9;
+            margin-bottom: 20px;
+        }
+
+        .detail-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .detail-text {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* ETKİLEŞİM SAYFASI */
+        .interaction-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 0 auto 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-family: "Poppins", sans-serif;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #b19cd9;
+            box-shadow: 0 0 0 3px rgba(177, 156, 217, 0.1);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #b19cd9, #87ceeb);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(177, 156, 217, 0.3);
+        }
+
+        /* GERİ SAYIM SAYFASI */
         .countdown-section {
-          padding: 40px 0;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #b19cd9 0%, #87ceeb 100%);
+            color: rgb(4, 4, 62);
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .countdown-container {
+            width: 100%;
+        }
+
+        .countdown-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 50px;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { opacity: 0.8; }
+            to { opacity: 1; }
         }
 
         .countdown-timer {
-          grid-template-columns: 1fr;
-          gap: 15px;
-          max-width: 300px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-      }
 
-      /* Dosya yükleme uyarısı */
-      .file-notice {
-        background: #ffeaa7;
-        border: 1px solid #fdcb6e;
-        padding: 10px;
-        border-radius: 8px;
-        font-size: 0.9rem;
-        margin-top: 10px;
-        color: #e17055;
-      }
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 30px 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .countdown-number {
+            font-size: clamp(2rem, 6vw, 3rem);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Başarı mesajı */
+        .success-message {
+            background: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideInDown 0.3s ease-out;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* RESPONSİVE TASARIM */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: white;
+                flex-direction: column;
+                justify-content: start;
+                align-items: center;
+                padding-top: 50px;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .countdown-timer {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .countdown-item {
+                padding: 20px 15px;
+            }
+
+            .form-container {
+                margin: 0 20px 40px;
+                padding: 30px 20px;
+            }
+
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .details-section,
+            .interaction-section,
+            .countdown-section {
+                padding: 40px 0;
+            }
+
+            .countdown-timer {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                max-width: 300px;
+            }
+        }
+
+        /* Dosya yükleme uyarısı */
+        .file-notice {
+            background: #ffeaa7;
+            border: 1px solid #fdcb6e;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            color: #e17055;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- NAVIGASYON -->
     <nav class="navbar">
-      <div class="container">
-        <div class="nav-container">
-          <ul class="nav-menu" id="navMenu">
-            <li>
-              <a href="#" class="nav-link active" data-page="home">Ana Sayfa</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link" data-page="details">Detaylar</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link" data-page="interaction">Mesajlar</a>
-            </li>
-            <li>
-              <a href="#" class="nav-link" data-page="countdown">Geri Sayım</a>
-            </li>
-          </ul>
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div class="container">
+            <div class="nav-container">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#" class="nav-link active" data-page="home">Ana Sayfa</a></li>
+                    <li><a href="#" class="nav-link" data-page="details">Detaylar</a></li>
+                    <li><a href="#" class="nav-link" data-page="interaction">Mesajlar</a></li>
+                    <li><a href="#" class="nav-link" data-page="countdown">Geri Sayım</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
 
     <!-- ANA SAYFA -->
     <div id="home" class="page active">
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1 class="main-title">
-              Söz verdik birbirimize; sevgiyle, saygıyla, umutla... <br />İlk
-              adımımızı kutlamaya davetlisiniz!
-            </h1>
-            <div class="date-info">
-              <p class="subtitle">Nişan Töreni</p>
-              <p class="subtitle"><strong>30 Ağustos 2025 - 19:00</strong></p>
-              <p class="subtitle">Trend Davet</p>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="main-title">
+                        Söz verdik birbirimize; sevgiyle, saygıyla, umutla... <br />İlk
+                        adımımızı kutlamaya davetlisiniz!
+                    </h1>
+                    <div class="date-info">
+                        <p class="subtitle">Nişan Töreni</p>
+                        <p class="subtitle"><strong>30 Ağustos 2025 - 19:00</strong></p>
+                        <p class="subtitle">Trend Davet</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
 
     <!-- DETAYLAR SAYFASI -->
     <div id="details" class="page">
-      <section class="details-section">
-        <div class="container">
-          <h2 class="section-title">Etkinlik Detayları</h2>
+        <section class="details-section">
+            <div class="container">
+                <h2 class="section-title">Etkinlik Detayları</h2>
 
-          <div class="details-grid">
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-calendar-alt"></i>
-              </div>
-              <h3 class="detail-title">Tarih</h3>
-              <p class="detail-text">30 Ağustos 2025<br />Cumartesi</p>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3 class="detail-title">Tarih</h3>
+                        <p class="detail-text">30 Ağustos 2025<br />Cumartesi</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="detail-title">Saat</h3>
+                        <p class="detail-text">19:00</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="detail-title">Konum</h3>
+                        <p class="detail-text">
+                            Trend Davet<br />Alpiş Aden sitesi, Panayır, 3. Pınar Cd. A B
+                            blok no254B, 16016 Osmangazi̇/Bursa
+                        </p>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <h3 class="map-title">Yolu kaybetmeyin diye bırakıyoruz:</h3>
+                    <iframe
+                        class="map-embed"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.965273320027!2d29.06194521116033!3d40.25430307134719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3fbb24c96153%3A0xbe3ed4f8657a098a!2sTrend%20davet!5e0!3m2!1str!2str!4v1751271910868!5m2!1str!2str"
+                        allowfullscreen
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                </div>
             </div>
-
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <h3 class="detail-title">Saat</h3>
-              <p class="detail-text">19:00</p>
-            </div>
-
-            <div class="detail-card">
-              <div class="detail-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <h3 class="detail-title">Konum</h3>
-              <p class="detail-text">
-                Trend Davet<br />Alpiş Aden sitesi, Panayır, 3. Pınar Cd. A B
-                blok no254B, 16016 Osmangazi̇/Bursa
-              </p>
-            </div>
-          </div>
-
-          <div class="map-container">
-            <h3 class="map-title">Yolu kaybetmeyin diye bırakıyoruz:</h3>
-            <iframe
-              class="map-embed"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3044.965273320027!2d29.06194521116033!3d40.25430307134719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14ca3fbb24c96153%3A0xbe3ed4f8657a098a!2sTrend%20davet!5e0!3m2!1str!2str!4v1751271910868!5m2!1str!2str"
-              allowfullscreen
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
 
     <!-- ETKİLEŞİM SAYFASI -->
     <div id="interaction" class="page">
-      <section class="interaction-section">
-        <div class="container">
-          <h2 class="section-title">Mesajınızı Bırakın</h2>
+        <section class="interaction-section">
+            <div class="container">
+                <h2 class="section-title">Mesajınızı Bırakın</h2>
 
-          <!-- Başarı mesajı -->
-          <div id="successMessage" class="success-message">
-            <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi!
-            Teşekkür ederiz 💙
-          </div>
-
-          <div class="form-container">
-            <!-- Netlify Forms için gerekli ayarlar -->
-            <form
-              name="nisan-mesajlari"
-              method="POST"
-              data-netlify="true"
-              enctype="multipart/form-data"
-              id="messageForm"
-            >
-              <input type="hidden" name="form-name" value="nisan-mesajlari" />
-
-              <div class="form-group">
-                <label for="guestName" class="form-label">Adınız:</label>
-                <input
-                  type="text"
-                  name="isim"
-                  id="guestName"
-                  class="form-input"
-                  required
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="guestMessage" class="form-label">Mesajınız:</label>
-                <textarea
-                  name="mesaj"
-                  id="guestMessage"
-                  class="form-textarea"
-                  placeholder="Güzel dileklerinizi buraya yazabilirsiniz..."
-                  required
-                ></textarea>
-              </div>
-
-              <div class="form-group">
-                <label class="form-label">Fotoğraf veya Video:</label>
-                <input
-                  type="file"
-                  name="dosyalar"
-                  id="guestFile"
-                  accept="image/*,video/*"
-                  multiple
-                  style="
-                    width: 100%;
-                    padding: 10px;
-                    border: 2px solid #e9ecef;
-                    border-radius: 10px;
-                  "
-                />
-                <div class="file-notice">
-                  <strong>Not:</strong>Birden fazla dosya seçebilirsiniz.
+                <!-- Başarı mesajı -->
+                <div id="successMessage" class="success-message">
+                    <i class="fas fa-check-circle"></i> Mesajınız başarıyla gönderildi! Teşekkür ederiz 💙
                 </div>
-              </div>
 
-              <button type="submit" class="btn">Mesajı Gönder</button>
-            </form>
-          </div>
-        </div>
-      </section>
+                <div class="form-container">
+                    <!-- Netlify Forms için gerekli ayarlar -->
+                    <form name="nisan-mesajlari" method="POST" data-netlify="true" enctype="multipart/form-data" id="messageForm" action="/thank-you.html">
+                        <input type="hidden" name="form-name" value="nisan-mesajlari" />
+                        
+                        <div class="form-group">
+                            <label for="guestName" class="form-label">Adınız:</label>
+                            <input type="text" name="isim" id="guestName" class="form-input" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="guestMessage" class="form-label">Mesajınız:</label>
+                            <textarea
+                                name="mesaj"
+                                id="guestMessage"
+                                class="form-textarea"
+                                placeholder="Güzel dileklerinizi buraya yazabilirsiniz..."
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Fotoğraf veya Video:</label>
+                            <input
+                                type="file"
+                                name="dosyalar"
+                                id="guestFile"
+                                accept="image/*,video/*"
+                                multiple
+                                style="width: 100%; padding: 10px; border: 2px solid #e9ecef; border-radius: 10px;"
+                            />
+                            <div class="file-notice">
+                                <strong>Not:</strong> Dosyalar e-posta olarak size iletilecektir. 
+                                Birden fazla dosya seçebilirsiniz (Ctrl+Click ile).
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn">
+                            Mesajı Gönder
+                        </button>
+                    </form>
+                </div>
+
+                <div style="text-align: center; color: #666; margin-top: 30px;">
+                    <p>📧 Tüm mesajlar size e-posta olarak iletilecektir.</p>
+                    <p>💌 Misafirlerinizden gelen güzel mesajları kaçırmayacaksınız!</p>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- GERİ SAYIM SAYFASI -->
     <div id="countdown" class="page">
-      <section class="countdown-section">
-        <div class="container">
-          <div class="countdown-container">
-            <h2 class="countdown-title">Nişana Kalan Süre</h2>
-            <div class="countdown-timer">
-              <div class="countdown-item">
-                <span class="countdown-number" id="days">0</span>
-                <span class="countdown-label">Gün</span>
-              </div>
-              <div class="countdown-item">
-                <span class="countdown-number" id="hours">0</span>
-                <span class="countdown-label">Saat</span>
-              </div>
-              <div class="countdown-item">
-                <span class="countdown-number" id="minutes">0</span>
-                <span class="countdown-label">Dakika</span>
-              </div>
-              <div class="countdown-item">
-                <span class="countdown-number" id="seconds">0</span>
-                <span class="countdown-label">Saniye</span>
-              </div>
+        <section class="countdown-section">
+            <div class="container">
+                <div class="countdown-container">
+                    <h2 class="countdown-title">Nişana Kalan Süre</h2>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">0</span>
+                            <span class="countdown-label">Gün</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">0</span>
+                            <span class="countdown-label">Saat</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">0</span>
+                            <span class="countdown-label">Dakika</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">0</span>
+                            <span class="countdown-label">Saniye</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
 
     <script>
-      // Sayfa geçiş sistemi
-      const pages = document.querySelectorAll(".page");
-      const navLinks = document.querySelectorAll(".nav-link");
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("navMenu");
+        // Sayfa geçiş sistemi
+        const pages = document.querySelectorAll(".page");
+        const navLinks = document.querySelectorAll(".nav-link");
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.getElementById("navMenu");
 
-      function showPage(pageId) {
-        pages.forEach((page) => page.classList.remove("active"));
-        const targetPage = document.getElementById(pageId);
-        if (targetPage) {
-          targetPage.classList.add("active");
+        function showPage(pageId) {
+            pages.forEach(page => page.classList.remove("active"));
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add("active");
+            }
+
+            navLinks.forEach(link => link.classList.remove("active"));
+            document.querySelector(`[data-page="${pageId}"]`).classList.add("active");
+
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("active");
         }
 
-        navLinks.forEach((link) => link.classList.remove("active"));
-        document
-          .querySelector(`[data-page="${pageId}"]`)
-          .classList.add("active");
-
-        navMenu.classList.remove("active");
-        hamburger.classList.remove("active");
-      }
-
-      navLinks.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          e.preventDefault();
-          const pageId = link.getAttribute("data-page");
-          showPage(pageId);
+        navLinks.forEach(link => {
+            link.addEventListener("click", (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute("data-page");
+                showPage(pageId);
+            });
         });
-      });
 
-      // Mobil menü
-      hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-        hamburger.classList.toggle("active");
-      });
+        // Mobil menü
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
 
-      // Geri sayım timer
-      const engagementDate = new Date("2025-08-30T19:00:00+03:00").getTime();
+        // Geri sayım timer
+        const engagementDate = new Date("2025-08-30T19:00:00+03:00").getTime();
 
-      function updateCountdown() {
-        const now = new Date().getTime();
-        const timeLeft = engagementDate - now;
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = engagementDate - now;
 
-        if (timeLeft > 0) {
-          const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-          const hours = Math.floor(
-            (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-          );
-          const minutes = Math.floor(
-            (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
-          );
-          const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-          document.getElementById("days").textContent = days;
-          document.getElementById("hours").textContent = hours;
-          document.getElementById("minutes").textContent = minutes;
-          document.getElementById("seconds").textContent = seconds;
-        } else {
-          document.getElementById("days").textContent = "0";
-          document.getElementById("hours").textContent = "0";
-          document.getElementById("minutes").textContent = "0";
-          document.getElementById("seconds").textContent = "0";
-          document.querySelector(".countdown-title").innerHTML =
-            "🎉 Nişan Günümüz Geldi! 🎉";
+                document.getElementById("days").textContent = days;
+                document.getElementById("hours").textContent = hours;
+                document.getElementById("minutes").textContent = minutes;
+                document.getElementById("seconds").textContent = seconds;
+            } else {
+                document.getElementById("days").textContent = "0";
+                document.getElementById("hours").textContent = "0";
+                document.getElementById("minutes").textContent = "0";
+                document.getElementById("seconds").textContent = "0";
+                document.querySelector(".countdown-title").innerHTML = "🎉 Nişan Günümüz Geldi! 🎉";
+            }
         }
-      }
 
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
 
-      // Form başarı mesajı gösterme
-      const form = document.getElementById("messageForm");
-      const successMessage = document.getElementById("successMessage");
+        // Form gönderimi ve yönlendirme kontrolü
+        const form = document.getElementById('messageForm');
+        const successMessage = document.getElementById('successMessage');
 
-      // URL'den başarı durumunu kontrol et
-      const urlParams = new URLSearchParams(window.location.search);
-      if (urlParams.get("success") === "true") {
-        successMessage.classList.add("show");
-        showPage("interaction"); // Mesajlar sayfasını göster
+        // Netlify form gönderimi - JavaScript ile kontrol
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Varsayılan form gönderimini engelle
+            
+            const formData = new FormData(this);
+            
+            // Loading durumu göster
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+            submitBtn.disabled = true;
+            
+            // Netlify'e form gönder
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(() => {
+                // Başarı durumunda
+                successMessage.classList.add('show');
+                form.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // 5 saniye sonra mesajı gizle
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            })
+            .catch((error) => {
+                // Hata durumunda
+                alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            });
+        });
 
-        // Mesajı 5 saniye sonra gizle
-        setTimeout(() => {
-          successMessage.classList.remove("show");
-        }, 5000);
+        // URL'den başarı durumunu kontrol et
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            successMessage.classList.add('show');
+            showPage('interaction');
+            
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 5000);
 
-        // URL'den parametreyi temizle
-        const newUrl = window.location.pathname;
-        history.replaceState({}, document.title, newUrl);
-      }
+            const newUrl = window.location.pathname;
+            history.replaceState({}, document.title, newUrl);
+        }
     </script>
 
     <!-- Netlify Forms için gerekli hidden form -->
     <form name="nisan-mesajlari" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="isim" />
-      <textarea name="mesaj"></textarea>
-      <input type="file" name="dosyalar" multiple />
+        <input type="text" name="isim" />
+        <textarea name="mesaj"></textarea>
+        <input type="file" name="dosyalar" multiple />
     </form>
-  </body>
+</body>
 </html>
